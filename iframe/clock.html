@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>时钟</title>
+<style type="text/css">
+*{ padding:0; margin:0}
+#can{}
+
+</style>
+
+</head>
+<body style="background:transparent">
+ <canvas id="can" width="170" height="170"></canvas>
+
+</body>
+
+<script>
+
+ var canid=document.getElementById("can");
+ var can=canid.getContext("2d");
+ var radius=70;
+ var crad=10;
+
+  setInterval("drawB()",1000);
+
+ function  drawB(){ 
+			can.clearRect(0,0,180,180);
+						
+			can.beginPath();
+			can.fillStyle="#ffffff";
+			can.arc(85,85,radius,0,Math.PI*2,true);
+			can.fill();
+			can.stroke();
+						
+			var date=new Date;
+			var h=date.getHours()*30+(date.getMinutes()*6/12)-90;
+			var m=date.getMinutes()*6-90;
+			var s=date.getSeconds()*6-90;
+
+			
+			//画表针
+			
+			drawBz(s,45,"#cc0000",2); //秒针
+			drawBz(m,35,"#000000",3); //分针
+			drawBz(h,25,"#000000",6); //时针
+						
+			function  drawBz(ds,x,col,cx){
+						
+			can.beginPath();
+			can.lineWidth=cx;
+			can.strokeStyle=col;
+			var Xtusr=Math.cos(ds*Math.PI/180)*(x)+85;
+			var Ytusr=Math.sin(ds*Math.PI/180)*(x)+85;
+			can.moveTo(85,85);
+			can.lineTo(Xtusr,Ytusr);
+			can.stroke();
+			can.closePath();
+			
+			}   
+			
+			//画中心园
+			//
+			can.beginPath();
+			can.lineWidth="5";
+			can.fillStyle="#000000";
+			can.arc(85,85,5,0,Math.PI*2,true);
+			can.fill();
+			can.stroke();
+
+
+			//画刻度
+			for(var i=0;i<60;i++){
+			drawKd(i,5);    
+			}
+						
+			function  drawKd(d,c){
+			var ds=d*6*Math.PI/180;
+			if(d%5==0){ 
+			     c=13;
+			     can.strokeStyle="#999999";
+			     can.lineWidth="2";
+			}
+			if(d==15 || d==30 || d==45 || d==0){ 
+				c=15;
+				can.strokeStyle="#000000";
+				can.lineWidth="3";	
+
+			}
+			
+			can.beginPath();		
+			var Xtus=Math.cos(ds)*radius+85;
+			var Ytus=Math.sin(ds)*radius+85;
+			var Xtusr=Math.cos(ds)*(radius-c)+85;
+			var Ytusr=Math.sin(ds)*(radius-c)+85;
+			can.moveTo(Xtus,Ytus);
+			can.lineTo(Xtusr,Ytusr);
+			can.stroke();
+			can.closePath();
+
+			//画表盘
+			can.beginPath();
+			var g2 = can.createRadialGradient(85,85,radius-15,85,85,radius);
+	        g2.addColorStop(0,"#444444");
+	        g2.addColorStop(0.5,"#3E3E3E");
+	        g2.addColorStop(1,"#3D3D3D");
+			can.strokeStyle=g2;
+			can.lineWidth="15";
+			can.arc(85,85,radius,0,Math.PI*2,true);
+			can.stroke();
+			
+			}
+
+ }
+
+</script>
+
+
+</html>

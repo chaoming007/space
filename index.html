@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta content="Q+ Web,Web QQ,QQ,WebOS,网页桌面,web桌面,QQ桌面" name="keywords">
+	<meta content="打造个人用户的一站式web平台" name="description">
+	<title>我的web桌面</title>
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+
+</head>
+<body>
+
+	
+
+<!--主窗口-->	
+<div class="main-window" id="mainWin">
+
+	<!--web桌面窗口-->
+	<div class="desk-window"  id="deskWin">
+
+
+		  <!--分屏导航-->
+				<div class="navBar" id="navBar">
+					<div class="navWarp" id="navWarp">
+						<div class="navCon" id="navWarp">
+
+								<div class="navList login" id="navListId">
+									<img class="" src="images/images/avatar.png" alt="请登录" />
+								</div>
+								<a href="javascript:;" class="navList" title="桌面一">
+									
+									<span class="navList iconCurrentSpan"></span>
+									<span class="navList iconSpan icon-sty-1"></span>
+								</a>
+								<a href="javascript:;" class="navList" title="桌面二">
+									
+									<span class="navList iconCurrentSpan"></span>
+									<span class="navList iconSpan icon-sty-2"></span>
+								</a>
+								<a href="javascript:;" class="navList" title="桌面三">
+									
+									<span class="navList iconCurrentSpan"></span>
+									<span class="navList iconSpan icon-sty-3"></span>
+								</a>
+								<a href="javascript:;" class="navList" title="桌面四">
+									
+									<span class="navList iconCurrentSpan"></span>
+									<span class="navList iconSpan icon-sty-4"></span>
+								</a>
+								<a href="javascript:;" class="navList" title="桌面五">
+									
+									<span class="navList iconCurrentSpan"></span>
+									<span class="navList iconSpan icon-sty-5"></span>
+								</a>
+
+								<a href="javascript:;" class="navList veiwBtn" title="全局视图"></a>
+								<a href="javascript:;" class="navList searchBtn" title="搜索"></a>
+
+
+						</div>
+					</div>
+				</div>
+		   <!--分屏导航-->
+		   <!--提醒-->
+			<div class="tx-box-sty" id="txBoxId">
+				<marquee id="affiche" align="left" behavior="scroll"  direction="left" height="36" width="800"  scrollamount="10" scrolldelay="100" onMouseOut="this.start()" onMouseOver="this.stop()">
+					这是一个完整的例子
+
+					</marquee>
+					<a class="window-plug-btnSty window-plug-closeBtn close-btn" id="closeA"></a>
+				
+			</div>
+		  <!--提醒-->
+		  <!--侧边栏-->
+			<div class="sideNav" id="sideNav">
+
+
+					<div class="sideIcoList" id="sideIcoList">
+						
+					</div>
+					<div class="tool-list" id="toolList" >
+						<div class="tool-list-item">
+							<a href="javascript:;" class="tool-ico tool-pinyin"></a>
+							<a href="javascript:;" class="tool-ico tool-sound"></a>
+							
+						</div>
+						<div class="tool-list-item">
+							<a href="javascript:;" class="tool-ico tool-set"></a>
+							<a href="javascript:;" class="tool-ico tool-bg"></a>
+							
+						</div>
+						<div class="tool-list-item2">
+							<a href="javascript:;" class="tool-ico tool-start" id="startMenu"></a>
+						</div>
+
+					</div>
+
+					<div class="start-menu" id="startMenuDiv">
+						 <div class="start-menu-bg start-menu-body">
+						 	  <div class="start-menu-head">
+						 	  	    <div class="start-menu-nick" id="startLoginId">请登录</div>
+						 	  	    <a href="javascript:;" class="start-menu-bg start-menu-supper"></a>
+						 	  	    <a href="javascript:;" class="start-menu-bg start-menu-lock"></a>
+						 	  </div>
+						 	  <ul class="start-ul">
+						 	  		<li><a href="javascript:;">添加到收藏夹</a></li>
+						 	  		<li><a href="javascript:;">保存桌面快捷方式</a></li>
+						 	  		<li><a href="javascript:;">下载客户端</a></li>
+						 	  		<li><a href="javascript:;">关于Q+ Web</a></li>
+						 	  		<li><a href="javascript:;">新手指导</a></li>	
+						 	  </ul>
+						 	  <a href="javascript:;" class="start-menu-bg login-btn"></a>
+			
+
+						 </div>
+					</div>
+			</div>
+
+		  <!--侧边栏-->
+		  <!--下边栏-->
+		    <div class="bottomNav" id="bottomNav">
+					<div class="b-content" id="bContent">
+
+
+					</div>
+		    </div>
+   		  <!--下边栏-->
+
+	<!--主桌面-->
+		<div class="desk-warp">
+
+			<!--系统窗口集合-->
+				<div class="system-box" id="systemBox">
+							
+							<!--切换主题窗口-->
+
+							    <div  class="setWindow systemSet" id="systemBg">
+							    	<div class="windowTit" id="winBgTit">
+							    		<a href="javascript:;" title="关闭" class="c" id="closeWinBg"></a>							    		
+							    		<span>更换主题</span>
+							    	</div>
+							    	<div class="deskBg-set">
+										<div  class="deskBg-nav" id="deskBgNav">						
+											<div class="navTab">推荐主题</div>						
+											<div class="navTab ">自然风景</div>
+											<div class="navTab ">人物写真</div>
+										</div>
+										<div class="deskBg-con" id="deskBgCon">
+												<div class="deskBg-list" id="deskBgList">
+													
+
+
+												</div>
+												<div class="deskBg-list">
+
+													
+
+												</div>
+												<div class="deskBg-list">
+
+
+
+												</div>
+							    		</div>
+							    	</div>
+							   </div>
+
+
+							<!--切换主题窗口-->
+
+
+
+							<!--系统设置窗口-->
+
+							    <div  class="setWindow systemSet-pos" id="sysSet">
+							    	<div class="windowTit" id="sysTit">
+							    		<a href="javascript:;" title="关闭" class="c" id="closeWinSet"></a>							    		
+							    		<span>系统设置</span>
+							    	</div>
+							    	<div class="deskBg-set">
+										 <div class="system-app-box" id="setapplist">
+										 			<a href="#" class="system-app">
+										 				<div class="setAppIco setIco-item"></div>
+														<div class="setSys-text">主题</div>
+
+										 			</a>
+										 			<a href="#" class="system-app">
+										 				<div class="setAppIco setIco-mark"></div>
+														<div class="setSys-text">应用市场</div>
+
+										 			</a>
+										 			<a href="#" class="system-app">
+										 				<div class="setAppIco setIco-notQQ"></div>
+														<div class="setSys-text">QQ提醒</div>
+
+										 			</a>
+										 			<a href="#" class="system-app">
+										 				<div class="setAppIco setIco-notfiy"></div>
+														<div class="setSys-text">通知设置</div>
+
+										 			</a>
+										 			<a href="#" class="system-app">
+										 				<div class="setAppIco setIco-hotkey"></div>
+														<div class="setSys-text">热键</div>
+
+										 			</a>
+										 			<a href="#" class="system-app">
+										 				<div class="setAppIco setIco-restore"></div>
+														<div class="setSys-text">系统还原</div>
+
+										 			</a>
+										 			<a href="#" class="system-app">
+										 				<div class="setAppIco setIco-deskset"></div>
+														<div class="setSys-text">桌面设置</div>
+
+										 			</a>
+
+
+
+
+
+
+										 </div>
+
+
+
+
+							    	</div>
+							   </div>
+
+
+							<!--系统设置窗口-->
+
+
+
+
+
+
+				</div>
+			<!--系统窗口集合-->
+
+			<div class="desk-box" id="deskbox">
+
+				<!--点击图标右键菜单-->
+					<div class="content-menu" id="appcontentMenu" >
+						<div class="content-menu-warp">
+								<ul class="content-menu-list">
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item" id="openBtn">
+												<span class="content-menu-txt">打开</span>
+											</a>
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item" id="moveBtn">
+												<span class="content-menu-txt">移动</span>
+												<span class="content-menu-sub"></span>
+											</a>
+										</li>
+										<li class="content-menu-bufflist">
+											<span class="content-menu-buff"></span>		
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item" id="unloadBtn">											
+												<span class="content-menu-txt">卸载</span>
+											</a>
+										</li>
+															
+
+								</ul>
+
+						</div>
+
+				</div>
+
+
+				<!--点击图标右键菜单-->
+
+					<!--弹出子菜单 移动到第几屏-->
+					
+				<div class="content-menu" id="contentMove" >
+						<div class="content-menu-warp">
+								<ul class="content-menu-list">
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-ico content-menu-checked"></span>
+												<span class="content-menu-txt ">第一屏</span>
+											</a>
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-ico content-menu-checked"></span>
+												<span class="content-menu-txt">第二屏</span>
+										    </a>
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-ico content-menu-checked"></span>
+												<span class="content-menu-txt ">第三屏</span>
+											</a>
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-ico content-menu-checked"></span>
+												<span class="content-menu-txt">第四屏</span>
+										    </a>
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-ico content-menu-checked"></span>
+												<span class="content-menu-txt">第五屏</span>
+										    </a>
+										</li>
+																	
+						
+
+								</ul>
+
+						</div>
+
+				</div>
+
+				<!--弹出子菜单 移动到第几屏-->
+
+
+
+
+
+
+
+
+
+				<!--右键菜单弹层-->
+				<div class="content-menu" id="contentMenu">
+						<div class="content-menu-warp">
+								<ul class="content-menu-list">
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item"><span class="content-menu-txt">显示桌面</span></a>
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item" id="localBtnId">
+												<span class="content-menu-txt">锁定</span>
+											</a>
+										</li>
+										<li class="content-menu-bufflist">
+											<span class="content-menu-buff"></span>		
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item" id="uploadId">
+												<span class="content-item-ico content-upload-ico"></span>
+												<span class="content-menu-txt">上传文件</span>
+											</a>
+										</li>
+										<li class="content-menu-listLi" id="addToolMenu">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-txt">添加工具</span>
+												<span class="content-menu-sub"></span>
+											</a>
+										</li>
+										<li class="content-menu-bufflist">
+											<span class="content-menu-buff"></span>		
+										</li>
+										<li class="content-menu-listLi" id="subMenuSet">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-txt">主题设置</span>
+											</a>
+										</li>
+										<li class="content-menu-listLi" id="sysMenuSet">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-txt">系统设置</span>											
+											</a>
+										</li>
+										<li class="content-menu-listLi" id="icoSetMenu" >
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-txt">图标排列</span>
+												<span class="content-menu-sub"></span>
+											</a>
+										</li>
+										<li class="content-menu-bufflist">
+											<span class="content-menu-buff"></span>		
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-txt">反馈</span>
+											</a>
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item" id="cancelId">
+												<span class="content-menu-txt">注销</span>												
+											</a>
+										</li>						
+
+
+								</ul>
+
+						</div>
+
+				</div>
+				<!--右键菜单弹层-->
+
+				<!--弹出子菜单 添加应用-->
+					
+				<div class="content-menu" id="contentOne" >
+						<div class="content-menu-warp">
+								<ul class="content-menu-list">
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-ico content-menu-checked"></span>
+												<span class="content-menu-txt">时钟</span>
+											</a>
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-ico content-menu-checked"></span>
+												<span class="content-menu-txt">天气</span>
+											</a>
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-ico content-menu-checked"></span>
+												<span class="content-menu-txt">提醒</span>
+											</a>
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-ico content-menu-checked"></span>
+												<span class="content-menu-txt">日历</span>
+											</a>
+										</li>
+										
+						
+
+								</ul>
+
+						</div>
+
+				</div>
+
+				<!--弹出子菜单 添加应用-->
+
+
+				<!--弹出子菜单 图标排列-->
+					
+				<div class="content-menu" id="contentTwo" >
+						<div class="content-menu-warp">
+								<ul class="content-menu-list">
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-ico content-menu-checked"></span>
+												<span class="content-menu-txt ">竖排</span>
+											</a>
+										</li>
+										<li class="content-menu-listLi">
+											<a href="javascript:;" class="content-menu-item">
+												<span class="content-menu-ico content-menu-checked"></span>
+												<span class="content-menu-txt">横排</span>
+										    </a>
+										</li>
+																	
+						
+
+								</ul>
+
+						</div>
+
+				</div>
+
+				<!--弹出子菜单 图标排列-->
+
+
+
+
+
+
+
+
+
+
+				 <div class="desk-content" id="deskcontent">
+
+						<div class="deskSty" >
+							   <div class="deskStyWarp" index="0"> 
+											
+										
+
+							
+								</div>
+									
+						</div>
+						<div class="deskSty" >
+
+									 <div class="deskStyWarp" index="1"> 
+											
+									
+									</div>
+
+
+						</div>
+						<div class="deskSty" >
+								
+								 <div class="deskStyWarp" index="2"> 
+											
+									
+								</div>
+
+
+						</div>
+						<div class="deskSty" >
+
+
+								 <div class="deskStyWarp" index="3"> 
+										
+
+								</div>
+
+
+						</div>
+						<div class="deskSty" >
+
+							    <div class="deskStyWarp" index="4"> 
+
+										
+								</div>
+
+
+						</div>
+			
+
+
+				 </div>
+			</div>
+		</div>
+	<!--主桌面-->
+
+	</div>
+	<!--web桌面窗口-->
+
+	<!--登陆窗口-->
+	<div class="loginBox" id="loginId" >
+
+		<div class="closeWarp">
+			<div class="closeBtn" id="closeBtnId"></div>
+		</div>
+		<div class="loginWarp">
+			 <div class="loginConBox">
+			 	  <div class="loginLogo" id="loginId"></div>
+			 	  <div class="loginWindow">
+			 	  	  <div class="loginInputBox">
+			 	  	  	   <div class="loginInputTxt">
+								<div class="userBox">
+									 <span class="userTit"></span>
+									 <span class="userName">
+									 	<input type="text" class="userInput" placeholder="请输入账号"  />
+									 </span>
+
+								</div>
+								<div class="userBox">
+									 <span class="passTit"></span>
+									  <span class="userName">
+									 	<input type="text" class="userInput"   />
+									 </span>
+
+
+								</div>
+								<div class="btnBox">
+									<div class="btnBoxWarp">
+
+										<input type="button" class="tjBtn" >
+										<input type="button" class="tjBtn zcBtn" >
+
+									</div>
+								</div>	
+
+							</div>
+					  </div>	
+			 	  </div>
+			 </div>
+		</div>
+	</div>
+
+	<!--登陆窗口-->
+
+
+
+
+
+<div class="localParent" id="localParent">
+
+
+<!--解锁窗口-->
+	<div class="local-window unlocalWin" id="unlocalwin">
+		 <div class="local-warp">
+		 		<div class="local-content">
+		 			<div class="local-tit">
+		 				<div class="local-tit-txt">锁定web桌面</div>
+						
+		 			</div>
+					
+		 			<div class="local-content-txt">
+		 				 <div class="local-userInfo">
+		 				 		
+		 				 		<img src="images/images/avatar.png">
+		 				 		<span>请您输入解锁密码</span>
+
+
+
+		 				 </div>
+		 				 <div class="local-js-box">
+		 				 		<label for="unLockPassword">解锁密码：</label>
+								<input id="unLockPassword" type="password" name="unLockPassword">
+
+		 				 </div>
+		 				 <div class="local-msg" id="unlocalMsg"></div>
+
+		 			</div>
+		 			
+					<div class="local-cortal">
+		 					
+		 						<a href="#" class="local-button" id="unlocalSure">确定</a>
+		 						
+		 		    </div>
+
+
+
+		 		</div>
+	
+		 </div>
+		
+
+	</div>
+
+
+	<!--解锁窗口-->
+
+
+
+	<!--锁定窗口-->
+	<div class="local-window localWin" id="localWin">
+		 <div class="local-warp">
+		 		<div class="local-content">
+		 			<div class="local-tit">
+		 				<div class="local-tit-txt">锁定web桌面</div>
+						<a href="#" class="local-tit-close" title="关闭" id="localClose"></a>
+		 			</div>
+					
+		 			<div class="local-content-txt">
+		 				<div class="local-c-tit">请设置解锁密码</div>
+		 				<div class="local-pwd-box">
+		 						<label for="lockPassword">输入密码：</label>
+								<input id="lockPassword" type="password" name="lockPassword">
+
+		 				</div>
+		 				<div class="local-pwd-box">
+		 						<label for="confirmLockPassword">确认密码：</label>
+								<input id="confirmLockPassword" type="password" name="confirmLockPassword">
+
+		 				</div>
+
+		 				<div class="local-msg" id="passMsg"></div>
+		 				<div class="local-msg1">(避免安全隐患，请将密码设置复杂一些！)</div>
+
+		 			</div>
+		 			
+					<div class="local-cortal">
+		 					
+		 						<a href="#" class="local-button" id="localSure">确定</a>
+		 						<a href="#" class="local-button" id="localCancel">取消</a>
+		 		    </div>
+
+
+
+		 		</div>
+	
+		 </div>
+		
+
+	</div>
+
+
+	<!--锁定窗口-->
+
+</div>
+	
+
+
+
+
+
+
+	<!--遮罩层-->
+	   <div class="shade-sty" id="shadeDiv"></div>
+	<!--遮罩层-->
+	
+	<!--主题设置-->
+	<div class="main-bg" id="mainBg">
+		 <img src="images/bimg/blue_glow.jpg"  />
+		
+	</div>
+	<!--主题设置-->
+
+</div>
+
+<!--加载进度-->
+<div class="loadDiv" id="loadDivId">
+	
+	<div class="load-txt-box" id="loadBoxId">
+		
+		  <div class="load-txt" id="loadTxtId">0%</div>
+	</div>
+
+
+
+</div>
+
+
+<!--加载进度-->
+
+
+
+
+
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/cQuery.js"></script>
+<script type="text/javascript" src="js/module.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/tools.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<style type="text/css">
+			*{ padding: 0; margin: 0}
+			.warpBox{background: url(../images/images/rili-bg.png) no-repeat; padding: 10px 0 0 14px; height: 210px}
+			#databox{ text-align: center; }
+			#databox th{ background: #eee; color: #000; font-weight: bolder; font-size: 12px; height: 20px; width: 20px; line-height: 20px; border:1px solid #666 }
+			#databox td{height: 20px; width: 20px; line-height: 20px;font-size: 12px;color: #000; color: #ffffff }
+			#databox td span{ cursor: pointer;}
+			#nr span:hover{background: #1AA0DA; display: block; width: 100%; height: 100%; color: #ffffff}
+			#head{ text-align: center;line-height: 25px; height: 37px}
+			#head span{margin:0 5px;}
+			#databox .hover{ background: #ff0000; color: #ffffff; display: block; height: 100%;  width: 100%; font-weight: bolder;}
+			#databox .pre{ float: left; width: 40px; height: 20px; line-height: 20px; background:#000000; color: #ffffff; text-align: center; display: block; font-style: normal; font-size: 12px; cursor: pointer}
+
+			#databox .nex{ float: right; width: 40px; height: 20px; line-height: 20px; background:#000000; color: #ffffff; text-align: center;display: block;font-style: normal; font-size: 12px;cursor: pointer}
+
+
+
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+
+				var tabBox=document.getElementById("databox");
+				var head=document.getElementById("head");
+				var Yspan=head.getElementsByTagName("span")[0];  //显示当前年容器
+				var Mspan=head.getElementsByTagName("span")[1];  //显示当前月容器
+				var tbod=document.getElementById("nr");
+				var tdd=tbod.getElementsByTagName("td");
+
+				var lefBtn=document.getElementById("pre"); //上一月下一月按钮
+				var rigBtn=document.getElementById("nex");
+
+
+
+				var monthDays=[31,28,31,30,31,30,31,31,30,31,30,31];                         //每月天数数组
+				var weekArr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"]; //每星期数组
+
+				var data=new Date();
+				var sYear=data.getFullYear();
+				var sMonth=data.getMonth();
+				var iYear=data.getFullYear();
+				var iMonth=data.getMonth();
+				var iWeek=data.getDate();
+
+/*
+   获得日期的响应数据
+	
+ */
+ 				loadData();
+ 				function loadData(){
+
+ 					if(iMonth<0){
+				 		iYear--;
+				 		iMonth=11;
+				 	}
+				 	if(iMonth>11){
+				 		iYear++;
+				 		iMonth=0;
+				 	}
+
+ 					//console.log(iYear+"--------"+iMonth);
+ 					var iwek=new Date(iYear,iMonth,1).getDay();	//获得本月第一天是星期几
+ 					var imDay=getMonthDay(iYear,iMonth);		//获得当前月有多少天
+ 					var itoday=new Date().getDate();   			//获得现在时间是几号
+ 					//alert(itoday);					
+ 					Yspan.innerHTML=iYear+"年";
+ 					Mspan.innerHTML=iMonth+1+"月";
+ 					var datanum=[];
+
+ 					for(var i=1;i<=imDay;i++){
+
+ 						if(itoday==i&&iMonth==sMonth&&iYear==sYear){          //判断当前日期添加样式
+ 						    var src="<span class='hover'>"+i+"</span>";
+ 							/*var spanCreate=document.createElement("span");
+ 							spanCreate.className="hover";
+ 							spanCreate.appendChild(i);*/
+
+ 						}else{
+ 							 var src="<span>"+i+"</span>";
+ 						}
+ 						var swek=new Date(iYear,iMonth,i).getDay();
+ 						var datval=iYear+"-"+(iMonth+1)+"-"+i+" "+weekArr[swek];  //获得当前日期的具体值
+ 						datanum.push({dat:src,val:datval});
+ 					}
+
+ 					//alert(datanum);
+ 					//压入数据
+ 					for(var i=0;i<tdd.length;i++){
+ 						tdd[i].innerHTML="";
+ 					}
+ 					if(iwek==0)iwek=7;
+ 					
+ 					
+ 					for(var i=0;i<datanum.length;i++){
+ 						 var This=datanum[i];
+ 					     tdd[iwek+i-1].innerHTML=datanum[i].dat;
+ 					     var spanc=tdd[iwek+i-1].getElementsByTagName("span")[0];
+
+ 					     (function(z){
+	 					     spanc.onclick=function(){ 		//点击日期触发事件
+	 					     	alert(datanum[z].val);
+	 					     }
+	 					 }(i))
+
+ 					   /*  datanum[i].dat.onclick=function(){
+ 					     	alert(This.datval);
+ 					     }*/
+ 					}
+
+
+ 				}
+
+				/*
+					上下月按钮事件
+				 */
+				 lefBtn.onclick=function(){
+				 
+				 	iMonth--;
+				 	loadData();
+
+				 }
+				 rigBtn.onclick=function(){
+				
+				 	iMonth++;
+				 	loadData();
+				 }
+/*
+	获得平年还是闰年的天数
+ */
+				function  getMonthDay(y,m){
+
+					if(m==1){
+						return ((y%4==0 && y%100!=0)||y%400==0)?29:28; 
+					}else{
+						return monthDays[m];
+					}
+
+				}
+
+
+		}
+
+	</script>
+
+
+</head>
+<body>
+	
+</body>
+
+<div class="warpBox">
+	<table border="0" id="databox" >
+
+	   <tr class="head" id="head">
+	      <td colspan=7><i class="pre" id="pre">上一月</i><span></span><span></span><i class="nex" id="nex">下一月</i></td>
+	   </tr>
+	   <tr>
+	   	<th>一</th>
+	   	<th>二</th>
+	   	<th>三</th>
+	   	<th>四</th>
+	   	<th>五</th>
+	   	<th>六</th>
+	   	<th>日</th>
+
+	   </tr>
+<tbody id="nr">
+
+	   <tr>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   </tr>
+	    <tr>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   </tr>
+	    <tr>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   </tr>
+	    <tr>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   </tr>
+	    <tr>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   </tr>
+	      <tr>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   	<td></td>
+	   </tr>
+
+</tbody>
+
+	</table>
+
+</div>
+
+</html>

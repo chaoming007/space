@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>提醒</title>
+
+<style type="text/css">
+*{ padding:0; margin:0}
+.mainBox{ width: 161px; height: 164px; background: url(../images/images/memo_background.png) no-repeat;  text-align: center}
+.mainBox .txt-box{ width: 140px; height: 100px; margin: 0 auto; margin: 10px 0 0 0; border: 0; font-size: 12px; background: none;resize:none; border: 1px solid #CFA422}
+.mainBox .txt-box-curr{ border: 0;}
+.mainBox .txtColor{ color: #999999}
+
+.mainBox p{ line-height: 20px; padding: 5px 10px 0; text-align: left; font-size: 12px; color: #CFA422; display: none}
+.mainBox .inp-txt{ width: 30px;border: 1px solid #CFA422; height: 18px; line-height: 18px}
+.mainBox .inp-btn{ width: 40px; height: 18px;border: 1px solid #CFA422; line-height: 18px; display: inline-block; text-align: center; font-size: 12px; text-decoration: none; float: right; color: #000000;
+
+	background: rgb(253,251,199); /* Old browsers */
+background: -moz-linear-gradient(top, rgb(253,251,199) 1%, rgb(245,221,124) 51%, rgb(207,164,34) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgb(253,251,199)), color-stop(51%,rgb(245,221,124)), color-stop(100%,rgb(207,164,34))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgb(253,251,199) 1%,rgb(245,221,124) 51%,rgb(207,164,34) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgb(253,251,199) 1%,rgb(245,221,124) 51%,rgb(207,164,34) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgb(253,251,199) 1%,rgb(245,221,124) 51%,rgb(207,164,34) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgb(253,251,199) 1%,rgb(245,221,124) 51%,rgb(207,164,34) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfbc7', endColorstr='#cfa422',GradientType=0 ); /* IE6-9 */
+
+}
+.mainBox  .ts-box-p{ line-height: 17px; height: 17px; padding: 0 10px; color:#cc0000; font-size: 12px; display: block; }
+
+</style>
+
+</head>
+<body style="background:transparent">
+	<div class="mainBox" id="mainBox" tabIndex=0>
+	  <textarea class="txt-box txt-box-curr" id="sr-box"></textarea>
+	  <p id="time-box"><input type="text" class="inp-txt" id="timInp"> 分钟后<a href="#" class="inp-btn" id="inpBtn">确定</a></p>
+	  <p class="ts-box-p" id="ts-box"></p>
+ 
+	</div>
+</body>
+
+<script type="text/javascript" src="../js/cQuery.js"></script>
+<script type="text/javascript">
+(function(){
+
+	var mainBox=_$("mainBox");
+	var txtBox=_$("sr-box");          //内容框
+	var timeBox=_$("time-box");		   //时间框
+	var tsBox=_$("ts-box");			//提示框
+	var inpBtn=_$("inpBtn");       //确定按钮
+	var timInp=_$("timInp");
+
+	var Pbox=window.parent.document.getElementById("txBoxId");
+	var Phtml=window.parent.document.getElementById("affiche");
+
+	txtBox.value="请输入提醒内容！";
+	addClass(txtBox,"txtColor");
+
+	mainBox.onclick=function(){
+
+			if(txtBox.value=="请输入提醒内容！"){
+				txtBox.value="";
+			};
+			removeClass(txtBox,"txtColor");
+			removeClass(txtBox,"txt-box-curr");
+			timeBox.style.display="block";
+			//tsBox.style.display="block";
+
+	}
+
+	inpBtn.onclick=function(ev){
+			var evt=ev||window.event;
+
+			if(txtBox.value==""){
+				
+				tsBox.innerHTML="请输入提示内容！";
+				return;
+			}
+			if(timInp.value==""){
+				
+				tsBox.innerHTML="请输入提示时间！";
+				return;
+
+			}
+			if(/^(\d)+$/g.test(timInp.value)){
+
+				tsBox.innerHTML="";
+				addClass(txtBox,"txt-box-curr");
+				timeBox.style.display="none";
+
+				setTimeFun(timInp.value);
+				alert("设置提醒成功！");
+
+			}else{
+
+				tsBox.innerHTML="请输入正确格式的时间！";
+				return;
+			}
+			
+			evt.stopPropagation ? evt.stopPropagation():evt.cancelBubble = true;
+
+	}
+
+		//定时函数
+		
+		function  setTimeFun(tim){
+				var timer;
+				var fzTim=parseInt(tim)*60*1000;
+				clearInterval(timer);
+				var dat=new Date().getTime();
+				timer=setInterval(function(){
+						var newDat=new Date().getTime();					
+						if((newDat-dat)>=fzTim){
+
+								Phtml.innerHTML=txtBox.value;
+								Pbox.style.display="block";
+								clearInterval(timer);
+
+						}
+
+				}, 1000);
+
+
+		}
+
+
+   /*mainBox.onmouseout=function(){
+
+   			if(txtBox.value==""){
+				txtBox.value="请输入提醒内容！";
+				addClass(txtBox,"txtColor");
+			}		     
+			
+			addClass(txtBox,"txt-box-curr");
+			timeBox.style.display="none";
+			tsBox.style.display="none";
+
+   }*/
+
+
+}())	
+
+
+</script>
+
+</html>

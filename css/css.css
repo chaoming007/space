@@ -1,0 +1,457 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,table,td,th,img,input,textarea,select,blockquote,p{padding:0; margin:0;}
+body{font-size:12px;font-size:Arial,sans-serif;line-height: 150% ;background: #ffffff; overflow: hidden;}
+img{border:none;}
+ol,ul,li {list-style:none;}
+img{vertical-align:top;border:0;}
+h1,h2,h3,h4,h5,h6{font-size:inherit; font-weight:normal;}
+address,cite,code,em,th,i{font-weight:normal; font-style:normal;}
+table{border-collapse:collapse;border-spacing:0}
+p{word-wrap:break-word}
+.clearfix{*zoom:1;}
+.clearfix:after{display:block; overflow:hidden; clear:both; height:0; visibility:hidden; content:".";}
+
+body{position:relative;}
+
+.navWarp,.navList{ background: url(../images/images/sprite_main_png.png) no-repeat}
+a {color:#000000; text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {color:#749731;}
+a:active {color:#749731;}
+
+.layDiv{ opacity:0; filter:alpha(opacity=0); z-index: 1000; position: absolute; top: 0; left: 0; background: #000000; display: none; cursor: move; }
+.toollayDiv{ opacity:0; filter:alpha(opacity=0); z-index: 1000; position: absolute; top: 0; left: 0; background: #000000; display:none; }
+
+/*主窗口样式*/
+.main-window{ position: relative; background-size: 100% 100%; opacity: 0;filter:alpha(opacity=0)}
+.desk-window{ position: relative; z-index: 5}
+
+/*背景主题容器*/
+
+.main-bg{ position: absolute; top: 0;left: 0; overflow: hidden; z-index: 1}
+.main-bg img{ }
+
+
+/*创建窗口样式*/
+.setWindow{ border:1px solid #95999c; background: #ffffff; overflow: hidden; position: absolute; border-radius: 8px 8px 0 0; opacity: 1}
+.setWindow .windowTit{cursor: move; text-align: center; height: 26px;border-bottom:1px solid #95999c; line-height: 26px; background: url(../images/images/sprite_repeat_x_png.png) repeat-x; background-position: 0 -29px; padding: 0 10px}
+.setWindow .windowTit a{ position: relative; top: 3px; cursor: pointer; display: block;float: right; width: 21px; height: 19px; margin-left: 5px; background: url(../images/images/sprite_main_png.png) no-repeat;}
+.setWindow .windowTit a.s{ background-position: -6px -59px}
+.setWindow .windowTit a.s:hover{background-position:-6px -31px}
+.setWindow .windowTit a.d{ background-position: -35px -59px}
+.setWindow .windowTit a.d:hover{background-position:-35px -30px}
+.setWindow .windowTit a.c{ background-position: -63px -59px}
+.setWindow .windowTit a.c:hover{background-position:-63px -30px}
+.setWindow .windowTit a.x{ background-position: -94px -59px; display: none}
+.setWindow .windowTit a.x:hover{background-position:-94px -30px}
+.setWindow .windowTit span{ display: block; height: 26px; line-height: 26px; font-size: 12px; color: #585C5F; text-align: center; margin: 0 auto; width: 300px}
+
+.setWindow .windowCon{ padding: 10px 0 ; line-height: 25px; position: relative;}
+.setWindow .iframSty{ width: 100%; overflow: auto; padding: 0; margin: 0; }
+
+/*侧边栏*/
+.sideNav{ width: 73px; height: 576px; background: url(../images/images/dock_l.png) no-repeat; position: absolute; left: 0; z-index: 6}
+.sideNav .sideIcoList{ height: 380px; width: 65px;}
+
+.sideNav .side-app-box{ height: 58px; margin: 20px auto 0;padding: 0; width: 58px;}
+.sideNav .side-app-box:hover{ background: url(../images/images/appbutton_mouseover_bg4.png) no-repeat}
+
+.sideNav .side-app-sty{background-position: center center; background-repeat: no-repeat;cursor: pointer; height: 48px; margin:0 auto; padding: 5px 0 0 0; overflow: hidden; position: relative;
+   width: 48px; display: block;}
+.sideNav .side-app-sty img{background-position: center center; background-repeat: no-repeat; height: 100%;overflow: hidden;
+  position: relative; width: 100%;}
+.sideNav .tool-list{ position: absolute; bottom: 5px; height: 115px; width: 65px; position: absolute; left: 0}
+.sideNav .tool-list-item{  height: 31px;margin: 0 auto;width: 50px;}
+.sideNav .tool-list-item2 {height: 50px;margin: 0 auto;}
+.sideNav .tool-ico{ background: url(../images/images/portal_all_png.png) no-repeat; cursor: pointer;display: block; float: left; height: 20px;margin: 5px 0;
+position: relative;width: 20px;}
+
+.sideNav .tool-pinyin{background-position: -80px 0;}
+.sideNav .tool-pinyin:hover{background-position: -80px -20px;}
+.sideNav .tool-sound{background-position: 0 0;margin-left: 10px;}
+.sideNav .tool-sound:hover{ background-position: 0 -20px;}
+.sideNav .tool-set{background-position: -60px 0;}
+.sideNav .tool-set:hover{background-position: -60px -20px;}
+.sideNav .tool-bg{ background-position: -40px 0;margin-left: 10px;}
+.sideNav .tool-bg:hover{ background-position: -40px -20px;}
+.sideNav .tool-start{  background-position: -100px 0;float: none;height: 40px;margin: 5px auto 0;width: 40px;}
+.sideNav .tool-start:hover{background-position: -140px 0;}
+
+/*开始按钮菜单*/
+.start-menu{  bottom: 4px;color: #FFFFFF;display: block;height: 240px;position: absolute;z-index: 300007;  left: 72px; display: none}
+.start-menu .start-menu-bg{ background: url(../images/images/startmenu.png) no-repeat;}
+.start-menu .start-menu-body{background-position: -33px -69px;min-height: 70px;overflow: hidden;padding: 0 0 7px;width: 182px;}
+.start-menu .start-menu-head{ height: 30px; padding: 5px 0 4px 5px}
+.start-menu .start-menu-nick{color: #4CE4FF; cursor: pointer; display: inline; float: left;font-size: 14px;height: 18px;margin: 5px 0 0 10px;overflow: hidden;
+  width: 95px;}
+.start-menu a.start-menu-supper{   background-position: -165px -355px;display: block;float: left;height: 24px; margin-left: 10px;width: 24px;}
+.start-menu a.start-menu-supper:hover{   background-position: -216px -355px;}
+.start-menu a.start-menu-lock{   background-position: -190px -355px; display: block;float: left;height: 24px; margin-left: 5px;width: 24px;}
+.start-menu a.start-menu-lock:hover{ background-position: -241px -355px;}
+.start-menu .start-ul{   font-family: Tahoma,Geneva,sans-serif;font-size: 12px;margin: 2px 0 0;padding: 0;}
+.start-menu .start-ul li{   cursor: pointer;line-height: 22px;list-style: none outside none; padding: 4px 10px 6px 15px;}
+.start-menu .start-ul li:hover{background: url(../images/images/startmenu.png) no-repeat -264px -153px}
+.start-menu .start-ul li a{ color: #FFFFFF;text-decoration: none;}
+.start-menu .login-btn{   background-position: -60px -355px;display: block;height: 35px; margin: auto;width: 35px;}
+.start-menu .login-btn:hover{ background-position: -23px -355px;}
+
+/*下边栏*/
+.bottomNav{ z-index: 5; background: url(../images/images/bg_task_b.png) repeat-x scroll 0 41px ;bottom:0;height: 64px;position: absolute;width: 100%;}
+.bottomNav .b-item-bg{background: url(../images/images/bg_task_nor.png) no-repeat}
+.bottomNav .b-content{  float: right;height: 64px;overflow: hidden;}
+
+.bottomNav .b-group{float: right;height: 100%;overflow: hidden; width: 0;
+
+	-webkit-transition: width 2s ease 0s;
+	-moz-transition: width 2s ease 0s;
+	-ms-transition: width 2s ease 0s;
+	-o-transition: width 2s ease 0s;
+	transition: width 2s ease 0s;
+}
+	
+.bottomNav .b-groupWidth{ width: 114px; position: relative;}		
+
+.bottomNav .b-item{  display: block;float: left;height: 100%; margin: 0 1px;vertical-align: middle;width: 112px; position: relative;}
+.bottomNav .b-item:hover{background: url(../images/images/bg_task_over.png) no-repeat}
+.bottomNav .b-itemico{ background-position: center center;background-repeat: no-repeat;cursor: pointer;float: left;height: 32px;margin: 22px 5px;
+   width: 32px;}
+.bottomNav .b-itemico img{ cursor: pointer;float: left;height: 32px;width: 32px;}
+.bottomNav .b-itemtxt{    color: #FFFFFF;cursor: pointer;float: left;height: 36px;line-height: 36px; margin-top: 27px;overflow: hidden; width: 70px;}
+.bottomNav .closeBtn{ cursor: pointer; background: url(../images/images/portal_all_png.png) no-repeat -94px -254px; width: 21px; height: 21px; z-index: 10; position: absolute;right: 5px; bottom: 30px; display: none}
+.bottomNav .closeBtn:hover{ background-position: 1px -459px}
+
+/*导航*/
+.navBar{width: 240px; height: 40px; position: absolute; z-index: 10}
+.navBar .navWarp{ height: 100%; background-position:-140px -45px}
+.navBar .navCon{ height: 100%; width: 100%; position: relative;}
+.navBar .login{ background-position: -418px -158px; margin: 0 10px 0 0; cursor: pointer;  height: 32px;position: relative; float:left;width: 32px; top: -10px; left: 5px}
+.navBar .login img{display: inline;float: left; height: 24px;margin: 4px 0 0 4px;width: 24px;}
+.navBar .navCon a{ position: relative; background-position: 10000px 10000px;color: #0DBBF1;cursor: pointer;display: inline-block;float: left;font-family: 宋体;font-size: 18px;
+    font-weight: bold;height: 20px;line-height: 1.5; margin: 4px 2px 0;outline: 0 none;position: relative;text-indent: -999em;width: 20px;}
+
+.navBar .iconCurrentSpan{background-position: -354px -154px; display: block;   display: none;height: 26px; left: -6px; position: absolute; top: -6px; width: 26px; z-index: 1;}
+.navBar .iconSpan{ float: left;height: 100%;overflow: hidden;position: relative;width: 100%;z-index: 1;}
+.navBar .icon-sty-1{ background-position: -336px -132px;}
+.navBar .icon-sty-2{  background-position: -366px -132px;}
+.navBar .icon-sty-3{ background-position: -396px -132px;}
+.navBar .icon-sty-4{ background-position: -426px -132px;}
+.navBar .icon-sty-5{ background-position: -456px -132px;}
+.navBar .icon-sty-1:hover {   background-position: -140px -132px;}
+.navBar .icon-sty-2:hover {   background-position: -180px -132px;}
+.navBar .icon-sty-3:hover {   background-position: -220px -132px;}
+.navBar .icon-sty-4:hover {   background-position: -260px -132px;}
+.navBar .icon-sty-5:hover {   background-position: -300px -132px;}
+.navBar a.veiwBtn{background-position: -132px -157px;margin: 2px 5px 0 20px;}
+.navBar a.veiwBtn:hover{background-position: -207px -157px;}
+.navBar a.searchBtn{background-position: -240px -157px; margin: 2px 8px 2px 0;}
+.navBar a.searchBtn:hover{background-position: -320px -157px;}
+
+
+/*主窗口*/
+.desk-warp{ position: relative; top: 0; left: 0;}
+.desk-warp .desk-box{ position: relative; left: 0;  top: 0;  height: 800px; width: 900px; overflow: hidden;}
+.desk-warp .desk-content{position: absolute; left: 0;  top: 0; overflow: hidden; }
+.desk-warp .deskSty{ position: absolute; top:0;
+-moz-transform-style: preserve-3d;
+ -webkit-transform-style: preserve-3d;perspective: 3000px;perspective-origin:50% 0%; background: url(../images/images/transparent.gif) no-repeat}
+
+.desk-warp .deskPosLeft{left: -2000px; opacity: 0; }
+.desk-warp .deskPosRight{left: 2000px; opacity: 0; }
+
+.desk-warp .deskAnimate1{ left: -2000px; opacity: 0; 
+-webkit-transition: left .7s ease 0s,opacity .7s linear 0s;
+-moz-transition: left .7s ease 0s,opacity .7s linear 0s;
+-ms-transition: left .7s ease 0s,opacity .7s linear 0s;
+-o-transition: left .7s ease 0s,opacity .7s linear 0s;
+transition: left .7s ease 0s,opacity .7s linear 0s;}
+
+.desk-warp .deskAnimate2{ left: 2000px; opacity: 0; 
+-webkit-transition: left .7s ease 0s,opacity .7s linear 0s;
+-moz-transition: left .7s ease 0s,opacity .7s linear 0s;
+-ms-transition: left .7s ease 0s,opacity .7s linear 0s;
+-o-transition: left .7s ease 0s,opacity .7s linear 0s;
+transition: left .7s ease 0s,opacity .7s linear 0s;}
+
+.desk-warp .deskAnimateShow{ left: 0px; opacity: 1; 
+-webkit-transition: left .7s ease 0s,opacity .7s linear 0s;
+-moz-transition: left .7s ease 0s,opacity .7s linear 0s;
+-ms-transition: left .7s ease 0s,opacity .7s linear 0s;
+-o-transition: left .7s ease 0s,opacity .7s linear 0s;
+transition: left .7s ease 0s,opacity .7s linear 0s;}
+
+
+
+.desk-warp .deskStyWarp{float: left ; position: relative; margin-left: 100px; margin-top: 60px;}
+.desk-warp  .desk-sport{
+	
+	-webkit-transform: rotateY(90deg);
+	-moz-transform: rotateY(90deg);
+	-ms-transform: rotateY(90deg);
+	-o-transform: rotateY(90deg);
+	transform: rotateY(90deg);
+	
+	-webkit-transition: transform 0.5s ease 0s;
+	-moz-transition: transform 0.5s ease 0s;
+	-ms-transition: transform 0.5s ease 0s;
+	-o-transition: transform 0.5s ease 0s;
+	transition: transform 0.5s ease 0s;
+}
+
+.desk-warp .appBtn{color: #FFFFFF;cursor: pointer;display: inline;float: left;font-size: 12px;height: 88px;position: absolute;width: 88px; top:0; left: 0}
+.desk-warp .higSty{ border:1px dotted #ffffff; border-radius: 3px} /*app碰撞时的样式*/
+.desk-warp .appBtn:hover{ background: url(../images/images/appbutton_mouseover_bg3.png) no-repeat 1px 0}
+.desk-warp .appIco{}
+.desk-warp .appBtn-ico{ background-position: center center;background-repeat: no-repeat;cursor: pointer; height: 48px; margin: 6px auto 0;overflow: hidden;
+ position: relative;width: 48px;}
+.desk-warp .appBtn-ico img{   background-position: center center;background-repeat: no-repeat;height: 100%;overflow: hidden; position: relative;
+    width: 100%;}
+.desk-warp .appName{    color: #FFFFFF; cursor: pointer; height: 20px;margin: 8px 0 0;  overflow: visible; text-align: center; width: 100%}
+.desk-warp .appName-inner{  background: url(../images/images/portal_all_png.png) no-repeat -80px -560px;display: inline-block; height: 20px;line-height: 18px;
+    margin: 0;max-width: 78px;overflow: hidden;padding: 0; position: relative;text-indent: 10px;vertical-align: middle;width: auto;}
+.desk-warp .appName-inner-right{  background: url(../images/images/portal_all_png.png) no-repeat -166px -560px ;
+  display: inline-block;height: 20px;margin: 0;padding: 0;vertical-align: middle; width: 10px; position: relative; }
+.desk-warp  .app-link-btn{background: url(../images/images/portal_all_png.png) no-repeat scroll -380px -500px;cursor: pointer;
+  height: 50px; margin: 5px auto;width: 50px;}
+
+.desk-warp .del-app-sty{ position: absolute; overflow: hidden; cursor: pointer; background: url(../images/images/portal_all_png.png) no-repeat -30px -560px; height: 24px;
+right: -10px;top: -10px;width: 24px; display: none}
+
+ /*iframe载入遮罩层样式*/ 
+ .layerDiv{ background: #006ab8; position: absolute; opacity: 1; top: 0; left: 0; z-index: 2}
+ .layerDiv img{ position: absolute; top: 50%; left: 50%; margin: -70px 0 0 -159px;}
+
+/*创建出的窗口样式*/
+
+.winStyNone{}
+
+/*系统设置，桌面背景窗口样式*/
+.system-box{ position: absolute; top: 0; left: 0}
+.systemSet{ width: 600px; height: 500px; top: 100px; left: 300px; z-index: 8;display: none}
+
+.deskBg-set{bottom: 0;left: 0; right: 0;top: 0;z-index: 0;}
+.deskBg-set .deskBg-nav{border-bottom:#A1B4B0 solid 1px;height: 22px;line-height: 22px;padding: 5px 0 0;width: 100%;}
+.deskBg-set .navTab{   cursor: pointer;display: inline;float: left;height: 22px;line-height: 22px; margin: 1px 1px 0 6px;position: relative; text-align: center;width: 80px;}
+.deskBg-set .current{ background: url(../images/images/tab_background.gif) #ffffff repeat-x  left top; border-color: #A1B4B0; border-style: solid; border-width: 1px 1px 0; margin: 0 0 0 5px;}
+.deskBg-set .deskBg-con{  height: 450px;overflow-x: hidden;overflow-y: auto;}
+.deskBg-set .deskBg-list{  height: 100%;overflow-x: hidden;overflow-y: auto;width: 100%; display: none}
+.deskBg-set a.list-a{   border-radius: 5px;cursor: pointer; display: inline; float: left; height: 140px; margin: 5px 10px 0; width: 160px;}
+.deskBg-set a.list-a:hover{ background: #CBE7FC;}
+.deskBg-set .img-box{    border-radius: 5px;height: 110px; margin: 5px auto;width: 150px;  overflow: hidden; position: relative;}
+
+.deskBg-set .img-box div{
+
+	   background: rgba(0, 0, 0, 0.8);
+    color: #FFFFFF;
+    font-size: 12px;
+    margin:0;
+    padding: 0 10px;
+    position:absolute;
+    top: 0; left: 0;
+    text-align: center;
+    width: 100%; height: 20px; line-height: 20px;
+    z-index: 10;
+ 
+}
+
+.deskBg-set .imgTit{
+
+	 -webkit-transform: translateY(-50px);
+   -moz-transform: translateY(-50px);
+   -o-transform: translateY(-50px);
+   -ms-transform: translateY(-50px);
+   transform: translateY(-50px);
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transition: all 0.2s ease-in-out;
+   -moz-transition: all 0.2s ease-in-out;
+   -o-transition: all 0.2s ease-in-out;
+   -ms-transition: all 0.2s ease-in-out;
+   transition: all 0.2s ease-in-out;
+
+
+}
+.deskBg-set .img-box:hover div{
+	
+	 -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 1;
+   -webkit-transform: translateY(0px);
+   -moz-transform: translateY(0px);
+   -o-transform: translateY(0px);
+   -ms-transform: translateY(0px);
+   transform: translateY(0px);
+
+}
+
+
+.deskBg-set .img-box img{
+
+	-webkit-transform: scaleY(1);
+   -moz-transform: scaleY(1);
+   -o-transform: scaleY(1);
+   -ms-transform: scaleY(1);
+   transform: scaleY(1);
+   -webkit-transition: all 0.5s ease-in-out;
+   -moz-transition: all 0.5s ease-in-out;
+   -o-transition: all 0.5s ease-in-out;
+   -ms-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+    border-radius: 5px;
+
+}
+
+.deskBg-set .img-box:hover img{
+
+	-webkit-transform: scale(1.5);
+   -moz-transform: scale(1.5);
+   -o-transform: scale(1.5);
+   -ms-transform: scale(1.5);
+   transform: scale(1.5);
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   
+
+}
+
+
+.deskBg-set .tit-box{   margin: 5px 0 0;text-align: center;}
+
+/*系统设置弹窗*/
+.systemSet-pos{  top: 100px; left: 500px; z-index: 8; width: 600px; height: 500px; display: none }
+.system-app-box{  height: 80px; overflow: hidden; top: 8px;width: 100%;}
+.system-app-box  a.system-app{   border-radius: 5px; cursor: pointer; display: inline; float: left; height: 70px; margin: 5px 5px 0; width: 70px;}
+.system-app-box  a.system-app:hover{background: #CBE7FC;}
+.system-app-box .setAppIco{  background: url(../images/images/settingbutton_icon.png) no-repeat center center;height: 36px; margin: 5px auto;width: 36px;}
+.system-app-box .setSys-text{ margin: 5px 0 0;text-align: center;}
+.system-app-box .setIco-item{ background: url(../images/images/settingbutton_themeicon.png) no-repeat  center center }
+.system-app-box .setIco-mark{background: url(../images/images/settingbutton_marketicon.png) no-repeat  center center}
+.system-app-box .setIco-notQQ{background: url(../images/images/settingbutton_notifysettingicon.png) no-repeat  center center}
+.system-app-box .setIco-notfiy{background: url(../images/images/settingbutton_notificationsicon.png) no-repeat  center center}
+.system-app-box .setIco-hotkey{background: url(../images/images/settingbutton_hotkeysettingicon.png) no-repeat  center center}
+.system-app-box .setIco-restore{background: url(../images/images/settingbutton_restoreicon.png) no-repeat  center center}
+.system-app-box .setIco-deskset{background: url(../images/images/settingbutton_desktopsetting.png) no-repeat  center center}
+
+
+/*右键菜单样式*/
+
+.content-menu{  display: block;overflow: hidden;position: absolute;width: 140px; z-index: 999999; top: 300px; left: 300px; display: none }
+.content-menu-warp{  background: #FFFFFF; border: 1px solid #B8CBCB;box-shadow: 2px 2px 5px #666666;overflow: hidden;padding: 1px;}
+.content-menu-list{ vertical-align: middle;}
+.content-menu-listLi{ vertical-align: middle;}
+.content-menu-item{  color: #000000;display: block;height: 25px;line-height: 24px;overflow: hidden; padding: 0 5px;position: relative;text-decoration: none;}
+.content-menu-item:hover{  background: #348CCC; color: #FFFFFF;text-decoration: none;}
+.content-menu-txt{display: block; margin: 0 20px;}
+.content-menu-bufflist{ font-size: 0;line-height: 0;}
+.content-menu-buff{    background: url(../images/images/context_menu_separator.gif) repeat-x left center;display: block;height: 7px;margin: 0 3px;}
+.content-menu-sub{   background: url(../images/images/portal_all_png.png) no-repeat -120px -458px;height: 16px;position: absolute;right: 5px;top: 5px;
+  width: 16px;}
+.content-item-ico{   height: 16px;left: 4px;position: absolute;top: 5px;width: 16px;}
+.content-menu-ico{  height: 16px;left: 4px;position: absolute;top: 5px; width: 16px;  display: none}
+.content-menu-checked{ background: url(../images/images/portal_all_png.png) no-repeat -100px -460px;}
+.content-upload-ico{ background: url(../images/images/portal_all_png.png) no-repeat  -180px -80px;}
+
+/*登陆窗口*/
+.shade-sty{ opacity:0.5; filter:alpha(opacity=50); background: #000000; position: absolute; top: 0; left: 0; display: none; z-index: 999990!important}
+.loginBox{ background: #F6F6F6;border: 1px solid #CCCCCC;border-radius: 10px;box-shadow: 0 0 8px #000000;left: 0;position: absolute;top: 0; z-index: 999999!important; width: 380px; height: 239px;  display: none}
+.loginBox .closeWarp{ position:relative; z-index:1;}
+.loginBox .closeBtn{    background: url(../images/images/boxy_btn.png) no-repeat scroll;cursor: pointer;height: 28px;position: absolute;
+ right: -10px;top: -10px; width: 28px; z-index: 1;}
+.loginBox .loginWarp{}
+.loginBox .loginConBox{   background:#F6F6F6;bottom: 10px;left: 10px; overflow: hidden;position: absolute;right: 10px;top: 10px;
+   }
+.loginBox .loginLogo{ background: url(../images/images/login_window_logo.png) no-repeat -200px 0;height: 44px;margin-left: 90px; width: 200px;}   
+.loginBox .loginWindow{  height: 170px; text-align: center;width: 100%;}
+.loginBox .loginInputBox{  overflow: hidden;padding-bottom: 10px;width: 356px; padding-top:20px;}
+.loginBox .loginInputTxt{ float: left;width: 296px;margin: 0 0 0 40px;padding: 1px 17px;}
+.loginBox .userBox{ margin: 14px 0 0}
+.loginBox .userTit{background: url(../images/images/login_btn.png) no-repeat 0 -36px;float: left;height: 20px; margin-right: 5px;
+ text-indent: -999em;width: 60px;}
+.loginBox .userName{ display: block; text-align: left}
+.loginBox .userInput{    border: 1px solid #CCCCCC;color: #868686;font-size: 16px; outline: medium none; padding: 2px; width: 170px;}
+.loginBox .passTit{background: url(../images/images/login_btn.png) no-repeat -60px -36px;float: left;height: 20px; margin-right: 5px;
+ text-indent: -999em;width: 60px;}
+.loginBox .btnBox{ margin: 10px 0; clear: both;}
+.loginBox .btnBoxWarp{ float: left;padding: 15px 0 0 10px;}
+.loginBox .tjBtn{  background: url(../images/images/login_btn.png) no-repeat -111px 0 ;border: 0 none;color: #0C4E7C;cursor: pointer;
+ height: 36px;line-height: 20px;margin-left: 14px;text-align: center;width: 111px;float: left;margin-left: 0;}
+.loginBox .zcBtn{ background-position: 0 0}
+
+/*抖动效果样式*/
+.r1{
+	 -moz-transform:rotate(-1deg);
+    -webkit-transform:rotate(-1deg);
+	-o-transform:rotate(-1deg);
+}
+
+.r2{
+	 -moz-transform:rotate(1deg);
+    -webkit-transform:rotate(1deg);
+	-o-transform:rotate(1deg);
+}
+
+/*锁定输入框样式*/
+
+.localParent{ width: 362px; height: 235px;z-index: 999999; position: absolute; display: none;}
+
+
+
+.local-window{ position: absolute; overflow: hidden; width: 362px; height: 235px; z-index: 999999;  top: 0; left:0;}
+.local-warp{  padding: 10px; position: absolute; top: 0; left: 0 ;right: 0; bottom: 0}
+.local-content{ height: 100%;width: 100%; position: relative; border-radius: 5px; border:1px solid #999999;background: #ffffff;}
+.local-tit{   border-radius: 3px 3px 0 0; cursor: default;height: 25px; background: url(../images/images/sprite_repeat_x_png.png) repeat 0 -31px;}
+.local-tit-txt{ color: #393836; height: 25px; text-align: center; font-weight: bolder; line-height: 25px}
+.local-tit-close{ position: absolute; right: 4px; top: 2px; width: 21px; height: 19px;  background: url(../images/images/sprite_main_png.png) no-repeat -63px -59px;}
+.local-tit-close:hover{ background-position:-63px -30px}
+
+.local-content-txt{width: 100%;border-top: 1px solid #CCCCCC; position: relative;}
+.local-c-tit{ padding: 20px 0 10px 40px; text-align: left;}
+.local-pwd-box{clear: left;padding:3px 0 3px 40px;text-align: left;}
+.local-pwd-box label{}
+.local-pwd-box input{ height: 18px;line-height: 18px; margin-left: 10px;}
+.local-msg{ color: #FF0000;height: 20px; line-height: 20px; text-align: center; padding: 5px 0}
+.local-msg1{padding-bottom: 10px; text-align: center}
+.local-cortal{ border-radius: 0 0 3px 3px;border-top: 1px solid #CCCCCC;bottom: 0;height: 26px;padding: 3px 0 0;width: 100%;background: url(../images/images/sprite_repeat_x_png.png) repeat-x  0 -100px;}
+.local-button{  color: #333333;cursor: pointer;float: right; height: 23px;line-height: 23px;margin-left: 10px;text-align: center; width: 66px;background: url(../images/images/sprite_main_png.png) no-repeat 0 -86px;
+    margin-right: 5px;}
+
+/*解锁*/
+.local-userInfo{ padding: 10px 0 10px; text-align: center}
+.local-userInfo img{ background: #FFFFFF; border: 1px solid #999999;box-shadow: 1px 1px 3px #666666;display: block;height: 40px;margin: 0 auto 20px;
+ overflow: hidden;padding: 1px;width: 40px;}
+.local-js-box{ padding: 3px 0; text-align: center;}
+
+.localWin{}
+.unlocalWin{ top: 0; left: 0;}
+
+/*加载进度*/
+.loadDiv{ background: #fff; top: 0; left: 0; position: absolute; z-index: 100000; width: 100%; height: 100%}
+.load-txt-box{ width: 350px; height: 245px; position: absolute; top: 50%; left: 50%; margin: -200px 0 0 -175px; background: url(../images/images/loading.gif) no-repeat;z-index: 100001; color: #fff; text-align: center;}
+.load-txt{ color: #0D9BFA;font-size: 26px; font-family: "微软雅黑"; font-weight: bolder; height: 50px; line-height: 50px; margin: 210px auto 0;  text-shadow:1px 1px 2px #999999;}
+
+/*时间天气插件*/
+
+.plug-load{ background: url(../images/images/ico_loading2.gif) no-repeat center center; position: absolute; top: 0; left: 0; opacity:1; filter:alpha(opacity=100); z-index: 1000;}
+.window-plug-box{ position: absolute; overflow: hidden; background: url(../images/images/transparent.gif) repeat 0 0)}
+.window-plug-tit{  height: 22px;overflow: hidden; cursor: move; visibility: hidden;}
+.window-plug-content{ background: none;opacity:0; filter:alpha(opacity=0);}
+.window-iframe{ width: 100%; height: 100%; overflow: hidden;}
+.window-iframe body{ text-align: center;}
+
+
+.window-plug-btnSty{cursor: pointer;display: block;float: right;height: 25px; margin-left: 4px;width: 25px;}
+.window-plug-closeBtn{  background: url(../images/images/portal_all_png.png) no-repeat -92px -255px; }
+.window-plug-closeBtn:hover{ background: url(../images/images/portal_all_png.png) no-repeat -274px -255px;}
+
+.window-plug-shareBtn{  background: url(../images/images/portal_all_png.png) no-repeat -124px -255px;}
+.window-plug-shareBtn:hover{background: url(../images/images/portal_all_png.png) no-repeat -306px -255px}
+
+.window-plug-intvBtn{background: url(../images/images/portal_all_png.png) no-repeat  -158px -255px;}
+.window-plug-intvBtn:hover{background: url(../images/images/portal_all_png.png) no-repeat -340px -255px;}
+
+/*提醒*/
+.tx-box-sty{ width: 800px; height: 36px; line-height: 36px; overflow: hidden; position: absolute; top: 60px; left: 50%; margin: 0 0 0 -400px; z-index: 99999; background: url(../images/images/tx-bg.png) no-repeat; color: #ffffff; display: none}
+.tx-box-sty .close-btn{ position:absolute;  right: 10px; top: 7px; display: none}
+
+
+
+
+
